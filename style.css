@@ -1,0 +1,71 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png");
+  min-height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+main {
+  min-height: 350px;
+}
+
+.page__title {
+  text-align: center;
+  color: #fff;
+}
+
+.alura__logo {
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+table {
+  width: 100%;
+  border: 2px solid #fff;
+  border-collapse: collapse;
+}
+
+th,
+td,
+tr {
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+}
+
+button {
+  border-radius: 10px;
+  padding: 4px;
+  background: #fefefe;
+  cursor: pointer;
+}
+
+main .container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.adicionar__jogador {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.validacao {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.rodape {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  padding: 2rem;
+}
