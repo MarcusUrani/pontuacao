@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+    <title>Tabela de classificação</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Pontuação</title>
+</head>
+<body>
+    <header>
+        <h1 class="page__title">Tabela de classificação</h1>
+        <div class="logo">
+            <a href="https://alura.com.br/" target="_blank">
+                <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="Logo alura" class="alura__logo">
+            </a>
+        </div>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Vitórias</th>
+                    <th>Empates</th>
+                    <th>Derrotas</th>
+                    <th>Pontos</th>
+                    <th colspan=5>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabela__jogadores">
+            </tbody>
+        </table>
+        <div class="container">
+            <input type="text" class="adicionar__jogador" required placeholder="Insira o nome do jogador aqui">
+            <button class="botao__adicionar">Adicionar</button>
+        </div>
+        <p class="validacao"></p>
+    </main>
+    <footer class="rodape">
+        <a href="https://github.com/MarcusUrani" target="_blank">
+            <img src="https://i.imgur.com/SSvQAZy.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/marcus-urani-553a4b21b/" target="_blank">
+            <img src="https://i.imgur.com/fgV9mOt.png" alt="LinkedIn">
+        </a>
+        <a href="mailto:marcus.urani20@gmail.com">
+            <img src="https://i.imgur.com/rUO94ml.png" alt="E-mail">
+        </a>
+    </footer>
+    <script src = "index.js"></script>
+</body>
+</html>
