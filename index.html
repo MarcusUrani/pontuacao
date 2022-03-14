@@ -9,47 +9,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
     <title>Tabela de classificação</title>
     <link rel="stylesheet" href="style.css">
-    <title>Pontuação</title>
 </head>
 <body>
     <header>
-        <h1 class="page__title">Tabela de classificação</h1>
-        <div class="logo">
+        <h1 class="header__title">Tabela de classificação</h1>
+        <sectio class="header__container">
             <a href="https://alura.com.br/" target="_blank">
-                <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="Logo alura" class="alura__logo">
+                <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="Logo alura" class="header__logo">
             </a>
-        </div>
+        </section>
     </header>
     <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Vitórias</th>
-                    <th>Empates</th>
-                    <th>Derrotas</th>
-                    <th>Pontos</th>
-                    <th colspan=5>Ações</th>
+        <table class="main__table">
+            <thead class="main__table--header">
+                <tr class="main__table--row">
+                    <th class="main__table--header--cell">Nome</th>
+                    <th class="main__table--header--cell">Vitórias</th>
+                    <th class="main__table--header--cell">Empates</th>
+                    <th class="main__table--header--cell">Derrotas</th>
+                    <th class="main__table--header--cell">Pontos</th>
+                    <th colspan=5 class="main__table--header--cell">Ações</th>
                 </tr>
             </thead>
-            <tbody id="tabela__jogadores">
+            <tbody id="players__table" class="main__table--players">
             </tbody>
         </table>
-        <div class="container">
-            <input type="text" class="adicionar__jogador" required placeholder="Insira o nome do jogador aqui">
-            <button class="botao__adicionar">Adicionar</button>
-        </div>
-        <p class="validacao"></p>
+        <section class="main__container">
+            <input type="text" class="add__player" required placeholder="Insira o nome do jogador aqui">
+            <button class="add__button">Adicionar</button>
+        </section>
+        <p class="main__error"></p>
     </main>
-    <footer class="rodape">
+    <footer>
         <a href="https://github.com/MarcusUrani" target="_blank">
-            <img src="https://i.imgur.com/SSvQAZy.png" alt="GitHub">
+            <img src="https://i.imgur.com/SSvQAZy.png" alt="GitHub" class="footer__link">
         </a>
         <a href="https://www.linkedin.com/in/marcus-urani-553a4b21b/" target="_blank">
-            <img src="https://i.imgur.com/fgV9mOt.png" alt="LinkedIn">
+            <img src="https://i.imgur.com/fgV9mOt.png" alt="LinkedIn" class="footer__link">
         </a>
         <a href="mailto:marcus.urani20@gmail.com">
-            <img src="https://i.imgur.com/rUO94ml.png" alt="E-mail">
+            <img src="https://i.imgur.com/rUO94ml.png" alt="E-mail" class="footer__link">
         </a>
     </footer>
     <script src = "app.js"></script>

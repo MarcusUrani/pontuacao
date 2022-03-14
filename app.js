@@ -1,122 +1,120 @@
-var novoJogador = document.querySelector(".adicionar__jogador");
+var newPlayer = document.querySelector(".add__player");
+var addButton = document.querySelector(".add__button");
+var error = document.querySelector(".main__error");
 
-var botaoAdiciona = document.querySelector(".botao__adicionar");
-
-var pontuacao = {
-    vitoria: 3,
-    empate: 1,
-    derrota: 0
+var pointsValue = {
+  victory: 3,
+  draw: 1,
+  lose: 0,
 };
+var players = [];
 
-var validacao = document.querySelector(".validacao");
-
-botaoAdiciona.addEventListener("click", function () {
-    var novoJogadorNome = novoJogador.value;
-    var jogadorNovo = {
-        nome: novoJogadorNome,
-        vitorias: 0,
-        empates: 0,
-        derrotas: 0,
-        pontos: 0
+addButton.addEventListener("click", function () {
+  if (newPlayer.value != "") {
+    var newPlayerName = newPlayer.value;
+    var player = {
+      name: newPlayerName,
+      victories: 0,
+      draws: 0,
+      loses: 0,
+      points: 0,
     };
-    novoJogador.value = "";
-    jogadores.push(jogadorNovo);
-    exibeJogadoresNaTela(jogadores);
+    newPlayer.value = "";
+    players.push(player);
+    showPlayers(players);
+  } else {
+    error.innerHTML = "Digite um nome para o jogador";
+  }
 });
 
-function calculaPontos(jogador) {
-    var pontos =
-        jogador.vitorias * pontuacao.vitoria + jogador.empates * pontuacao.empate;
-    return pontos;
+function calcPoints(player) {
+  var points =
+    player.victories * pointsValue.victory + player.draws * pointsValue.draw;
+  return points;
 }
 
-var jogadores = [];
+function showPlayers(players) {
+  var element = "";
+  for (var i = 0; i < players.length; i++) {
+    element += "<tr><td>" + players[i].name + "</td>";
+    element += "<td>" + players[i].victories + "</td>";
+    element += "<td>" + players[i].draws + "</td>";
+    element += "<td>" + players[i].loses + "</td>";
+    element += "<td>" + players[i].points + "</td>";
+    element +=
+      "<td><button onclick='addVictory(" + i + ")'>Vitória</button></td>";
+    element += "<td> <button onclick='addDraw(" + i + ")'>Empate</button></td>";
+    element += "<td><button onclick='addLose(" + i + ")'>Derrota</button></td>";
+    element +=
+      "<td><button onclick='restartPoints(" + i + ")'>zerar</button></td>";
+    element +=
+      "<td><button onclick='removePlayer(" + i + ")'>Remover</button></td>";
+    element += "</tr>";
+  }
 
-function exibeJogadoresNaTela(jogadores) {
-    var elemento = "";
-    for (var i = 0; i < jogadores.length; i++) {
-        elemento += "<tr><td>" + jogadores[i].nome + "</td>";
-        elemento += "<td>" + jogadores[i].vitorias + "</td>";
-        elemento += "<td>" + jogadores[i].empates + "</td>";
-        elemento += "<td>" + jogadores[i].derrotas + "</td>";
-        elemento += "<td>" + jogadores[i].pontos + "</td>";
-        elemento +=
-            "<td><button onclick='adicionarVitoria(" + i + ")'>Vitória</button></td>";
-        elemento +=
-            "<td> <button onclick='adicionarEmpate(" + i + ")'>Empate</button></td>";
-        elemento +=
-            "<td><button onclick='adicionarDerrota(" + i + ")'>Derrota</button></td>";
-        elemento +=
-            "<td><button onclick='zerarPontuacao(" + i + ")'>zerar</button></td>";
-        elemento +=
-            "<td><button onclick='removerJogador(" + i + ")'>Remover</button></td>";
-        elemento += "</tr>";
-    }
-
-    var tabelaJogadores = document.querySelector("#tabela__jogadores");
-    tabelaJogadores.innerHTML = elemento;
-    validarPontos();
+  var tabelaplayers = document.querySelector("#players__table");
+  tabelaplayers.innerHTML = element;
+  validPoints();
 }
 
-function adicionarVitoria(i) {
-    var jogador = jogadores[i];
-    jogador.vitorias++;
-    jogador.pontos = calculaPontos(jogador);
-    exibeJogadoresNaTela(jogadores);
+function addVictory(i) {
+  var player = players[i];
+  player.victories++;
+  player.points = calcPoints(player);
+  showPlayers(players);
 }
 
-function adicionarEmpate(i) {
-    var jogador = jogadores[i];
-    jogador.empates++;
-    jogador.pontos = calculaPontos(jogador);
-    exibeJogadoresNaTela(jogadores);
+function addDraw(i) {
+  var player = players[i];
+  player.draws++;
+  player.points = calcPoints(player);
+  showPlayers(players);
 }
 
-function adicionarDerrota(i) {
-    var jogador = jogadores[i];
-    jogador.derrotas++;
-    exibeJogadoresNaTela(jogadores);
+function addLose(i) {
+  var player = players[i];
+  player.loses++;
+  showPlayers(players);
 }
 
-function zerarPontuacao(i) {
-    var jogador = jogadores[i];
-    jogador.vitorias = 0;
-    jogador.empates = 0;
-    jogador.derrotas = 0;
-    jogador.pontos = 0;
-    exibeJogadoresNaTela(jogadores);
+function restartPoints(i) {
+  var player = players[i];
+  player.victories = 0;
+  player.draws = 0;
+  player.loses = 0;
+  player.points = 0;
+  showPlayers(players);
 }
 
-function removerJogador(i) {
-    jogadores.splice(i, 1);
-    exibeJogadoresNaTela(jogadores);
+function removePlayer(i) {
+  players.splice(i, 1);
+  showPlayers(players);
 }
 
-function validarPontos() {
-    var numeroVitorias = 0;
-    var numeroEmpates = 0;
-    var numeroDerrotas = 0;
-    var valido = true;
+function validPoints() {
+  var victoryNumber = 0;
+  var drawNumber = 0;
+  var loseNumber = 0;
+  var valid = true;
 
-    for (var i = 0; i < jogadores.length; i++) {
-        numeroVitorias += jogadores[i].vitorias;
-        numeroEmpates += jogadores[i].empates;
-        numeroDerrotas += jogadores[i].derrotas;
-    }
+  for (var i = 0; i < players.length; i++) {
+    victoryNumber += players[i].victories;
+    drawNumber += players[i].draws;
+    loseNumber += players[i].loses;
+  }
 
-    validacao.innerHTML += "";
+  error.innerHTML += "";
 
-    if (numeroVitorias != numeroDerrotas) {
-        valido = false;
-        validacao.innerHTML =
-            "O número de vitórias e de derrotas não é equivalente";
-    } else {
-        validacao.innerHTML = "";
-    }
-    if (!Number.isInteger(numeroEmpates / 2)) {
-        valido = false;
-        validacao.innerHTML = "O número de empates não pode ser ímpar";
-    }
+  if (victoryNumber != loseNumber) {
+    valid = false;
+    error.innerHTML = "O número de vitórias e de derrotas não é equivalente";
+  } else {
+    error.innerHTML = "";
+  }
+  if (!Number.isInteger(drawNumber / 2)) {
+    valid = false;
+    error.innerHTML = "O número de empates não pode ser ímpar";
+  }
 }
 
-exibeJogadoresNaTela();
+showPlayers();

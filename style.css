@@ -1,32 +1,37 @@
+/*Global Style*/
+
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: "Lato", sans-serif;
   background-image: url("https://www.alura.com.br/assets/img/imersoes/dev-2021/tabela-classificacao-bg.png");
-  min-height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  min-height: 40rem;
+  padding: 0;
 }
 
 main {
-  min-height: 350px;
-}
-
-.page__title {
-  text-align: center;
-  color: #fff;
-}
-
-.alura__logo {
-  width: 40px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  margin: 0;
+  min-height: 35rem;
+  padding: 0;
 }
 
 table {
-  width: 100%;
-  border: 2px solid #fff;
+  border: 0.2rem solid #fff;
   border-collapse: collapse;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 th,
@@ -34,38 +39,104 @@ td,
 tr {
   border: 1px solid #fff;
   color: #fff;
+  font-size: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
 button {
-  border-radius: 10px;
-  padding: 4px;
   background: #fefefe;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.5rem;
+  transition: all ease 0.4s;
 }
 
-main .container {
-  margin-top: 20px;
+button:hover {
+  background: #9e9e9e;
+  color: #fff;
+}
+
+button:active {
+  background: #9e9e9e;
+  color: #fff;
+  transform: translateY(3px);
+}
+
+main {
+  padding: 1rem 2rem;
+}
+
+/*Header Style*/
+
+.header__title {
+  color: #fff;
+  font-size: 3rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.header__logo {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  transform: scale(0.9);
+  transition: all ease 0.4s;
+  width: 4rem;
+}
+
+.header__logo:hover {
+  opacity: 0.8;
+  transform: scale(1);
+}
+
+/*Main Style*/
+
+.main__container {
+  align-items: center;
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 }
 
-.adicionar__jogador {
-  border-radius: 10px;
-  padding: 5px;
+.add__player {
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 17%;
 }
 
-.validacao {
+.add__player:focus {
+  outline: none;
+}
+
+.add__player::placeholder {
+  color: var(--secondary-black);
+}
+
+.main__error {
   text-align: center;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-top: 25px;
+  margin-top: 2.5rem;
 }
 
-.rodape {
+footer {
   display: flex;
   gap: 5rem;
   justify-content: center;
   padding: 2rem;
+}
+
+.footer__link {
+  transform: scale(0.9);
+  transition: all ease 0.5s;
+}
+
+.footer__link:hover {
+  opacity: 0.7;
+  transform: scale(1);
 }
