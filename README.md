@@ -4,6 +4,7 @@
 
 ## Tecnologias Utilizadas
 
+- Visual Studio Code: Editor de código;
 - HTML: Linguagem de marcação utilizada para a estruturação da página;
 - CSS: Utilizado para a estilização da página e adição de efeitos em botões e links;
 - JavaScript: Linguagem utilizada para a criação de funções para adicionar jogador, remover jogador, calcular os pontos, zerar os pontos e verificar erros.
