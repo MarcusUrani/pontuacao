@@ -15,7 +15,7 @@
 - Após adicionar o jogador é possível aumentar o número de vitórias, empates ou derrotas;
 - Os pontos são calculados automaticamente e caso hajam icoerências no número de vitórias, empates ou derrotas uma mensagem de erro será exibida na tela;
 
-- Obrigado por usar! :)
+Obrigado por usar! :)
 
 ## Autor
 
