@@ -10,14 +10,15 @@
 
 ## Como Usar?
 
-1- Acesse a página do [link](https://pontuacao.netlify.app);
-2- Escreva o nome do jogador no input apresentado, feito isso clique no botão adicionar;
-3- Após adicionar o jogador é possível aumentar o número de vitórias, empates ou derrotas;
-4- Os pontos são calculados automaticamente e caso hajam icoerências no número de vitórias, empates ou derrotas uma mensagem de erro será exibida na tela;
+1 - Acesse a página do [link](https://pontuacao.netlify.app);
+2 - Escreva o nome do jogador no input apresentado, feito isso clique no botão adicionar;
+3 - Após adicionar o jogador é possível aumentar o número de vitórias, empates ou derrotas;
+4 - Os pontos são calculados automaticamente e caso hajam icoerências no número de vitórias, empates ou derrotas uma mensagem de erro será exibida na tela;
 
 - Obrigado por usar! :)
 
 ## Autor
 
 - Marcus Urani
-- [LinkedIn](https://likedin.com/in/marcusurani);
+- [LinkedIn](https://likedin.com/in/marcusurani)
+- [Portfólio](https://marcusurani.netlify.app)
